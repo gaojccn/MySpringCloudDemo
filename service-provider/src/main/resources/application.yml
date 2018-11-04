@@ -19,10 +19,8 @@ mybatis-plus:
   #  typeEnumsPackage: com.baomidou.springboot.entity.enums #枚举字段扫描，支持实体的枚举字段（看官网Spring Boot实例）
   global-config:
     db-config:
-      #已经过测试
       db-type: MYSQL #数据库类型
-      column-underline: false #生成的SQL语句中，字段是否自动加入下划线
-      #未经过测试
+      column-underline: true #生成的SQL语句中，字段是否自动加入下划线
     refresh: true #启动后，修改Target中的XML即可马上更新，用于调试；生产中不要启动
   configuration:
     map-underscore-to-camel-case: true
