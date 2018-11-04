@@ -1,0 +1,11 @@
+server:
+  port: 8767
+
+spring:
+  profiles: node2
+eureka:
+  instance:
+    hostname: node2
+  client:
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/

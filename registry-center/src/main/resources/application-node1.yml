@@ -1,0 +1,12 @@
+server:
+  port: 8761
+
+spring:
+  profiles: node1
+eureka:
+  instance:
+    hostname: node1
+  client:
+    serviceUrl:
+      #register with each other 互相注册
+      defaultZone: http://node2:8767/eureka/
