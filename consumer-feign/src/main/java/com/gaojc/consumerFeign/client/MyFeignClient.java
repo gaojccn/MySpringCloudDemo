@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "service-provider", fallback = MyFeignClientHystrix.class)
 public interface MyFeignClient {
     /**
-     * 调用eureka-client服务的/hello接口
+     * 调用service-provider服务的/hello接口
      *
      * @param name
      * @return
