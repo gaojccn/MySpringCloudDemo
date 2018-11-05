@@ -20,10 +20,11 @@ public class HelloServiceImpl implements HelloService {
     @Override
     @HystrixCommand(fallbackMethod = "errorHandle")
     public String sayHi(String name) {
-        return restTemplate.getForObject("http://SERVICE-PROVIDER/hello?name=" + name, String.class);
+        return restTemplate.getForObject("http://service-provider/hello?name=" + name, String.class);
     }
 
     @Override
+    @HystrixCommand(fallbackMethod = "errorHandle2")
     public String getUsers() {
         String jsonStr = restTemplate.getForObject("http://service-provider/users", String.class);
         log.info("jsonStr = {}", jsonStr);

@@ -11,6 +11,7 @@
         <module name="consumer-feign" />
         <module name="consumer-ribbon" />
         <module name="hystrix-dashboard" />
+        <module name="rabbitmq-server" />
         <module name="registry-center" />
         <module name="service-provider" />
         <module name="zuul-server" />

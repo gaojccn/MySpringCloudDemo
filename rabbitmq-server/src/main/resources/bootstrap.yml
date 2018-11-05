@@ -1,0 +1,17 @@
+server:
+  port: 8883
+
+spring:
+  application:
+    name: rabbitmq-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/  #注册中心地址

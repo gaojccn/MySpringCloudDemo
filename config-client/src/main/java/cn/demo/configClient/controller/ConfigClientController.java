@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by gaojc on 2018/10/21.
+ * *
+ * http://localhost:8881/actuator/bus-refresh 去刷新读取配置文件
  */
 @RefreshScope //开启更新功能
 @RestController

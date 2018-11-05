@@ -11,7 +11,16 @@ spring:
       discovery:
         enabled: true
         serviceId: config-server
-#      uri: http://localhost:8084/  #指明配置服务中心的网址
+      #      uri: http://localhost:8084/  #指明配置服务中心的网址
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    virtual-host: /
 
 eureka:
   client:
@@ -20,3 +29,9 @@ eureka:
   instance:
     appname: config-client
     instance-id: localhost:8881
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
