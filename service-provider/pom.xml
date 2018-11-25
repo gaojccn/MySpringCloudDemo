@@ -51,6 +51,11 @@
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
+            <artifactId>mybatisplus-spring-boot-starter</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
             <version>${mybatis-plus-version}</version>
         </dependency>
@@ -89,6 +94,10 @@
                 </includes>
             </resource>
 
+            <!--将resources目录下的配置文件编译进classes文件  -->
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
         </resources>
     </build>
 

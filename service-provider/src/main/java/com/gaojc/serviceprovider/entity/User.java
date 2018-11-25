@@ -1,29 +1,39 @@
 package com.gaojc.serviceprovider.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author gaojc
+ * @since 2018-11-25
+ */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@TableName("user")
-public class User implements Serializable {
-    @TableId
+@AllArgsConstructor
+public class User extends Model<User> {
+
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
 
-    @TableField(value = "user_name")
     private String userName;
 
-    @TableField(value = "pass_word")
     private String passWord;
 
-    @TableField(value = "email")
     private String email;
+
+
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
 
 }

@@ -18,4 +18,10 @@ public class UserServiceImpl implements UserService {
         log.info("getUser by id = {}", id);
         return userMapper.selectById(id);
     }
+
+    @Override
+    public void addUser(User user) {
+        int save = userMapper.insert(user);
+        log.info("insert success {} user", save);
+    }
 }

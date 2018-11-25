@@ -4,4 +4,6 @@ import com.gaojc.serviceprovider.entity.User;
 
 public interface UserService {
     User getUser(Integer id);
+
+    void addUser(User user);
 }

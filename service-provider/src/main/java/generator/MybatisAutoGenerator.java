@@ -1,14 +1,14 @@
 package generator;
 
 import com.baomidou.mybatisplus.annotation.DbType;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.PackageConfig;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.AbstractTemplateEngine;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import freemarker.cache.TemplateConfigurationFactory;
 
 /**
  * MybatisPlus AutoGenerateCode util class
@@ -65,7 +65,7 @@ public class MybatisAutoGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
 // strategy.setInclude(new String[] { "user" }); // 需要生成的表
 // strategy.setExclude(new String[]{"test"}); // 排除生成的表
-        strategy.setExclude("user");
+        strategy.setInclude("user");
         strategy.setEntityLombokModel(true);
         strategy.setEntityBuilderModel(true);
         strategy.setRestControllerStyle(true);
