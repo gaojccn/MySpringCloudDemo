@@ -1,14 +1,12 @@
 package com.gaojc.serviceprovider.config;
 
-import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.sql.DataSource;
-
+@MapperScan("com.gaojc.serviceprovider.mapper")
 @Configuration
 public class MybatisPlusConfig {
     /***
@@ -33,15 +31,4 @@ public class MybatisPlusConfig {
         return new PaginationInterceptor();
     }
 
-
-    /**
-     * @Description : druid注入
-     */
-    @Bean
-    @ConfigurationProperties("spring.datasource.druid")
-    public DataSource dataSource() {
-        return DruidDataSourceBuilder
-                .create()
-                .build();
-    }
 }
