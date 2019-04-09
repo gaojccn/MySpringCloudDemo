@@ -1,6 +1,7 @@
 server:
   port: 8881
 
+#用Spring Cloud Bus实现通知微服务架构的配置文件的更改
 spring:
   application:
     name: config-client

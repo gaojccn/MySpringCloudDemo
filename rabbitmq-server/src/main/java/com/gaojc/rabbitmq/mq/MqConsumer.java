@@ -9,7 +9,10 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 /**
- * 消息消费者，接收到2个队列的消息
+ * mq消息消费者
+ *
+ * @author gaojc
+ * @date 2019/4/9 22:02
  */
 public class MqConsumer {
 
