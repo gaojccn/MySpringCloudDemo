@@ -14,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swagger配置文件类
+ * 生成的接口访问地址: http://localhost:8762/swagger-ui.html
  *
  * @author gaojc
  * @since 2019/4/9 10:25

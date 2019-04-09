@@ -35,5 +35,5 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 logging:
-  level: info
-
+  level:
+    com.baomidou.mybatisplus: debug

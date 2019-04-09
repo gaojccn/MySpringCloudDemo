@@ -29,4 +29,10 @@ public class UserController {
     public void addUser(@RequestBody UserBO userBO) {
         userService.addUser(userBO);
     }
+
+    @ApiOperation(value = "搜索用户", notes = "搜索用户")
+    @PostMapping("/query")
+    public String userArray(@RequestBody UserBO userBO) {
+        return userService.queryUser(userBO);
+    }
 }
