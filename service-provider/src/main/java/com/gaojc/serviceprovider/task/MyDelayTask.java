@@ -3,7 +3,7 @@ package com.gaojc.serviceprovider.task;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class MyDelayTask implements Runnable{
+public class MyDelayTask implements Runnable {
     private Long delayTime;
     private String msg;
 
@@ -14,6 +14,6 @@ public class MyDelayTask implements Runnable{
 
     @Override
     public void run() {
-        log.info("delay print msg={}",msg);
+        log.info("delay print count={} msg={}", delayTime, msg);
     }
 }

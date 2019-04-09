@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * User 实体类
  * </p>
  *
  * @author gaojc
@@ -30,10 +30,8 @@ public class User extends Model<User> {
 
     private String email;
 
-
     @Override
     protected Serializable pkVal() {
         return this.id;
     }
-
 }
