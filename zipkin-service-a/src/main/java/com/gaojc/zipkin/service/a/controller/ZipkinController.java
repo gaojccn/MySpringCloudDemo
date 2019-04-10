@@ -28,7 +28,7 @@ public class ZipkinController {
     @GetMapping("/hi")
     public String hi(){
         log.info("zipkin service a hi()");
-        return restTemplate.getForObject("http://localhost:8989/srvb/hi", String.class);
+        return restTemplate.getForObject("http://localhost:8899/srvb/hi", String.class);
     }
 
     @GetMapping("/info")
