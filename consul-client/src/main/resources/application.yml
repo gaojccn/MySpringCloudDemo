@@ -1,0 +1,14 @@
+server:
+  port: 8501
+
+spring:
+  application:
+    name: consul-client
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: /actuar/health
+        healthCheckInterval: 15s
+        instance-id: consul-client-1
