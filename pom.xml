@@ -31,6 +31,7 @@
         <module>rabbitmq-server</module>
         <module>admin-server</module>
         <module>consul-client</module>
+        <module>security-jwt</module>
     </modules>
 
     <properties>
