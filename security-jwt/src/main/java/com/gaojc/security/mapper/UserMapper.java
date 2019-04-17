@@ -13,5 +13,5 @@ public interface UserMapper extends BaseMapper<User> {
 
     User findByUserName(String userName);
 
-    List<String> queryUserOwnedRoleCodes(String userName);
+    List<String> queryUserOwnedRoleNames(String userName);
 }

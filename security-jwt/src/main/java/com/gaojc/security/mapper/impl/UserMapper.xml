@@ -22,8 +22,8 @@
         where user_name = #{userName}
     </select>
 
-    <select id="queryUserOwnedRoleCodes" resultType="java.lang.String">
-        select r.role_code from <include refid="table_name"/> u
+    <select id="queryUserOwnedRoleNames" resultType="java.lang.String">
+        select r.role_name from <include refid="table_name"/> u
         inner join <include refid="table_name2"/> r
         on u.id = r.user_id
         where u.user_name = #{userName}

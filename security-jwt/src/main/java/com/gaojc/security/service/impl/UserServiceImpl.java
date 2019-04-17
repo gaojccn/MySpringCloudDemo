@@ -10,7 +10,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -31,7 +30,7 @@ public class UserServiceImpl implements UserService {
             //throw exception inform front end not this user
             throw new UsernameNotFoundException("user + " + userName + "not found.");
         }
-        List<String> roleCodeList = userMapper.queryUserOwnedRoleCodes(userName);
+        List<String> roleCodeList = userMapper.queryUserOwnedRoleNames(userName);
 
         List<GrantedAuthority> authorities =
                 roleCodeList.stream().map(e -> new SimpleGrantedAuthority(e)).collect(Collectors.toList());
@@ -42,7 +41,6 @@ public class UserServiceImpl implements UserService {
         return userDetails;
     }
 
-    @Transactional
     @Override
     public UserVO getUserByUserName(String userName) {
         UserVO userVO = new UserVO();
@@ -50,8 +48,8 @@ public class UserServiceImpl implements UserService {
         userVO.setUserName(user.getUserName());
         userVO.setUserDesc(user.getUserDesc());
 
-        List<String> userRoles = userMapper.queryUserOwnedRoleCodes(userName);
-        userVO.setRoleCodes(userRoles);
+        List<String> userRoles = userMapper.queryUserOwnedRoleNames(userName);
+        userVO.setRoleNames(userRoles);
         return userVO;
     }
 

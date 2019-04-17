@@ -5,7 +5,7 @@ Content-Type: application/json
 
 {
   "username": "gaojc",
-  "password":"123"
+  "password": "123"
 }
 
 ### login验证
