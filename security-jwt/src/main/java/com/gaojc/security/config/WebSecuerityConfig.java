@@ -1,8 +1,10 @@
 package com.gaojc.security.config;
 
+import com.gaojc.security.jwt.JwtAuthenticationFilter;
 import com.gaojc.security.service.MyUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -13,6 +15,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * @author gaojc
@@ -46,9 +49,15 @@ public class WebSecuerityConfig {
             builder.userDetailsService(myUserDetailsService);
         }
 
+        @Bean
+        public JwtAuthenticationFilter getJwtAuthenticationFilter() {
+            return new JwtAuthenticationFilter();
+        }
+
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+            http.addFilterBefore(getJwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class).
+                    sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                     .and().csrf().disable()
                     .authorizeRequests()
                     .antMatchers("/v2/api-docs/**").permitAll()

@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
                 roleCodeList.stream().map(e -> new SimpleGrantedAuthority(e)).collect(Collectors.toList());
 
         UserDetails userDetails = new org.springframework.security.core.userdetails.User(
-                user.getUserName(), user.getPassword(), authorities);
+                user.getUserName(), user.getPassWord(), authorities);
 
         return userDetails;
     }

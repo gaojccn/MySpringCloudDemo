@@ -29,3 +29,6 @@ mybatis-plus:
 logging:
   level:
     com.baomidou.mybatisplus: debug
+
+jwtTokenSecret: gaojc
+tokenExpiredMs: 604800000
