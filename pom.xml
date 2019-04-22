@@ -32,6 +32,7 @@
         <module>admin-server</module>
         <module>consul-client</module>
         <module>security-jwt</module>
+        <module>gateway-server</module>
     </modules>
 
     <properties>
