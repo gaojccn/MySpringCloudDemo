@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class GetwayServerController {
 
-    @Bean
+    /*@Bean
     public RouteLocator myRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(p -> p
@@ -25,6 +25,7 @@ public class GetwayServerController {
                         .uri("http://httpbin.org:80"))
                 .build();
     }
+*/
 
     /**
      * 加上Hystrix 熔断
@@ -49,6 +50,11 @@ public class GetwayServerController {
                                         .setFallbackUri("forward:/fallback")))
                         .uri(httpUri))
                 .build();
+    }
+
+    @RequestMapping("/delay/3")
+    public String delayThree() {
+        return "delay/3";
     }
 
     @RequestMapping("/fallback")
