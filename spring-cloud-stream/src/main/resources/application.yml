@@ -1,0 +1,16 @@
+spring:
+  cloud.stream.bindings:
+    output1:
+      contentType: application/json #约定消息的内容编码格式
+    output2:
+      contentType: application/json #约定消息的内容编码格式
+    input1:
+      group: inputGroup #加上group是为了持久化
+    input2:
+      group: inputGroup2
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin

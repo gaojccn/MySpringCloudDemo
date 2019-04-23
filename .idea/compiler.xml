@@ -14,11 +14,15 @@
         <module name="rabbitmq-server" />
         <module name="registry-center" />
         <module name="service-provider" />
+        <module name="spring-cloud-stream" />
         <module name="zuul-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cl2" target="1.8" />
+      <module name="common-api" target="1.8" />
+      <module name="zipkin-service-a" target="1.8" />
+      <module name="zipkin-service-b" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

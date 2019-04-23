@@ -33,6 +33,7 @@
         <module>consul-client</module>
         <module>security-jwt</module>
         <module>gateway-server</module>
+        <module>spring-cloud-stream</module>
     </modules>
 
     <properties>

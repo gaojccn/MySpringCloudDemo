@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/rabbitmq-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/registry-center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-stream" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zuul-server" charset="UTF-8" />
   </component>
 </project>
