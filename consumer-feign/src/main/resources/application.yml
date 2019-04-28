@@ -7,3 +7,9 @@ server:
 spring:
   application:
     name: consumer-feign
+
+feign:
+  hystrix:
+    enabled: true
+
+headerPre: gaojcFeign=true
