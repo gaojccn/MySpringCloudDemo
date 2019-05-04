@@ -1,6 +1,7 @@
 package com.gaojc.consumerFeign.common.config;
 
 import com.netflix.client.config.IClientConfig;
+import com.netflix.loadbalancer.ILoadBalancer;
 import feign.Client;
 import feign.Request;
 import feign.Response;
@@ -65,8 +66,10 @@ public class MyLoadBalancerFeignClient extends LoadBalancerFeignClient {
 //            clientConfig.set(CommonClientConfigKey.ListOfServers, mockProperties.getIpAddress());
             // 获取当前服务的负载均衡器，对当前服务的负载均衡器添加服务ip地址信息
             if (this.clientFactory.getLoadBalancer(clientName).getAllServers().isEmpty()) {
-                this.clientFactory.getLoadBalancer(clientName);
-//                        addServers(Arrays.asList(new Server(mockServer[0], Integer.parseInt(mockServer[1]))));
+                ILoadBalancer loadBalancer = this.clientFactory.getLoadBalancer(clientName);
+
+                System.out.println(loadBalancer);
+                // addServers(Arrays.asList(new Server(mockServer[0], Integer.parseInt(mockServer[1]))));
             }
 
             // 重新构建请求 URL
