@@ -1,0 +1,10 @@
+
+### 请求controller测试
+GET http://localhost:8765/csmf/hi?name=123
+headerPre:  true
+
+
+###优雅的停服务
+curl -x POST http://localhost:8765/shutdown
+
+###

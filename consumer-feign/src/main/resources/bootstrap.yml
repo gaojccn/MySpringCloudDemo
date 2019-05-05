@@ -7,7 +7,21 @@ server:
 
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
 
-headerPre: gaojcFeign=true
+headerPre:  headerPre=true
+
+logging:
+  level:
+    com.gaojc.consumerFeign.controller: debug
+feign:
+  hystrix:
+    enabled: true
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: true
+management:
+  security:
+    enabled: false

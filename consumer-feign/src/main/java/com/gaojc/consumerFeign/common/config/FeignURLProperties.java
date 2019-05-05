@@ -1,23 +1,17 @@
 package com.gaojc.consumerFeign.common.config;
 
 import lombok.Data;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
  * @author gaojc
  * @date 2019/4/28 22:25
  */
-@Data
 @Component
-public class FeignURLProperties implements InitializingBean {
-
-    @Value("headerPre")
+@Data
+@ConfigurationProperties
+public class FeignURLProperties {
     public String headerPre;
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println(headerPre);
-    }
 }
