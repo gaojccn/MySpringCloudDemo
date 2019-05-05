@@ -54,7 +54,7 @@ public class MyLoadBalancerFeignClient extends LoadBalancerFeignClient {
         String url = request.url();
         URI uri = URI.create(url);
         String clientName = uri.getHost();
-        String headerPre = feignURLProperties.getHeaderPre();
+        String headerPre = feignURLProperties.getHeaderPreName();
 
         //请求的客户名称转为小写
         String newUrl = null;
@@ -77,7 +77,7 @@ public class MyLoadBalancerFeignClient extends LoadBalancerFeignClient {
             log.info("请求的 {} 服务已开启全局 mock 功能,服务地址：{}", clientName,
                     this.clientFactory.getLoadBalancer(clientName).getAllServers());
         }
-        if (request.headers().get(headerPre).contains(headerPre)) {
+        if (!request.headers().get(headerPre).isEmpty()) {
             newUrl = url.replace(clientName, clientName + "_new");
         }
         //重新构建 request　对象

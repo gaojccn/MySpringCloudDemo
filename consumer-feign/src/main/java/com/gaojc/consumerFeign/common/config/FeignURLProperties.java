@@ -14,4 +14,6 @@ import org.springframework.stereotype.Component;
 public class FeignURLProperties {
     public String headerPre;
 
+    public String headerPreName;
+
 }

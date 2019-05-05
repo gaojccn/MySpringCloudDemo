@@ -10,11 +10,12 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 
+headerPreName:  headerPre
 headerPre:  headerPre=true
 
 logging:
   level:
-    com.gaojc.consumerFeign.controller: debug
+    com.gaojc.consumerFeign: debug
 feign:
   hystrix:
     enabled: true
