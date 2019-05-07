@@ -1,2 +1,2 @@
 # MySpringCloudDemo
-我的springcloud学习项目
+my springcloud study demo project 
