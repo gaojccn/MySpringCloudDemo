@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: moss-monitor
+server:
+  port: 8201
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://127.0.0.1:8761/eureka/
+
+info:
+  groupId: @project.groupId@
+  artifactId: @project.artifactId@
+  version: @project.version@
+
