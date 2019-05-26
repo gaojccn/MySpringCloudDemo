@@ -35,6 +35,7 @@
         <module>gateway-server</module>
         <module>spring-cloud-stream</module>
         <module>moss-monitor</module>
+        <module>spring-event</module>
     </modules>
 
     <properties>
